@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home Tutor Site</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: #f7f7f7;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        /* Top bar */
+        .top-bar {
+            background: #ffffff;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* Navbar */
+        .nav-link {
+            font-weight: 600;
+        }
+
+        .nav-item:hover .nav-link {
+            color: #0d6efd;
+        }
+
+        /* Search Section */
+        .search-section {
+            background: #fff;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            margin-top: 30px;
+        }
+
+        .stats-box {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.07);
+            text-align: center;
+        }
+
+        .stats-number {
+            font-size: 28px;
+            color: #ff6600;
+            font-weight: 700;
+        }
+
+        /* Panels */
+        .panel-box {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .panel-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .step {
+            text-align: center;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .step-number {
+            font-size: 28px;
+            font-weight: bold;
+            color: #0d6efd;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- --------------------- TOP BAR ------------------------- -->
+<div class="top-bar">
+    <div class="container d-flex justify-content-between">
+        <div>
+            <i class="bi bi-telephone"></i> <b>8367682255</b> (9am to 6pm)
+        </div>
+        <div>
+            <a href="#" class="me-3">Login</a>
+            <a href="#">Sign Up</a>
+        </div>
+    </div>
+</div>
+
+<!-- --------------------- NAVBAR ------------------------- -->
+<nav class="navbar navbar-expand-lg bg-white shadow-sm">
+    <div class="container">
+        <a class="navbar-brand fw-bold fs-4" href="#">
+            <img src="https://i.imgur.com/n5VbRkI.png" height="45">
+            Home Tutor Site
+        </a>
+
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div id="menu" class="collapse navbar-collapse">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">How It Works</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Explainer Videos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">I Need a Tutor</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Join as Tutor</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- --------------------- SEARCH SECTION ------------------------- -->
+<div class="container">
+    <div class="search-section">
+        <h4 class="text-center mb-4">Search Tuitions / Tutors Near You</h4>
+
+        <div class="row g-3">
+            <div class="col-md-3">
+                <select class="form-select">
+                    <option>Select City</option>
+                    <option>Mumbai</option>
+                    <option>Delhi</option>
+                    <option>Kolkata</option>
+                </select>
+            </div>
+
+            <div class="col-md-3">
+                <select class="form-select">
+                    <option>Tuitions</option>
+                    <option>Tutors</option>
+                </select>
+            </div>
+
+            <div class="col-md-4">
+                <input class="form-control" placeholder="Enter Course or Subject Keywords">
+            </div>
+
+            <div class="col-md-2">
+                <button class="btn btn-primary w-100">Search</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- --------------------- STATS ------------------------- -->
+<div class="container my-4">
+    <div class="row g-3">
+        <div class="col-md-4">
+            <div class="stats-box">
+                <div class="stats-number">All India</div>
+                <small>Coverage</small>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="stats-box">
+                <div class="stats-number">8,00,000+</div>
+                <small>Home Tutors</small>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="stats-box">
+                <div class="stats-number">6,00,000+</div>
+                <small>Tuition Jobs Handled</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- --------------------- TWO PANELS ------------------------- -->
+<div class="container my-5">
+    <div class="row g-4">
+
+        <!-- Left Panel -->
+        <div class="col-md-6">
+            <div class="panel-box">
+                <div class="panel-title text-primary">Looking for Home Tutors?</div>
+
+                <div class="row text-center mb-3">
+                    <div class="col step">
+                        Tell us Your <br> <span class="step-number">1</span>
+                    </div>
+                    <div class="col step">
+                        Get a Free Demo <br> <span class="step-number">2</span>
+                    </div>
+                    <div class="col step">
+                        Confirm if You Like <br> <span class="step-number">3</span>
+                    </div>
+                </div>
+
+                <button class="btn btn-danger w-100 py-2" href="page.html">
+                    I Need a Home / Online Tutor
+                </button>
+            </div>
+        </div>
+
+        <!-- Right Panel -->
+        <div class="col-md-6">
+            <div class="panel-box">
+                <div class="panel-title text-primary">Looking for Tuition Jobs?</div>
+
+                <div class="row text-center mb-3">
+                    <div class="col step">
+                        Create Profile <br> <span class="step-number">1</span>
+                    </div>
+                    <div class="col step">
+                        Get Students <br> <span class="step-number">2</span>
+                    </div>
+                    <div class="col step">
+                        Start Earning <br> <span class="step-number">3</span>
+                    </div>
+                </div>
+
+                <button class="btn btn-warning w-100 py-2" href="page.html">
+                    Join as Tutor for Free
+                </button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
