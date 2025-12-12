@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home Tutor Registration</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+    body { background: #f7f7f7; font-family: "Segoe UI", sans-serif; }
+
+    /* Header */
+    .top-header { background: #fff; padding: 12px 0; border-bottom: 1px solid #ddd; }
+    .site-title { font-size: 32px; font-weight: 700; color: #0066aa; }
+    .sub-title { font-size: 18px; font-weight: 600; color: #2d7a47; }
+
+    /* Steps */
+    .step-box { text-align: center; }
+    .step-num {
+        width: 50px; height: 50px; border-radius: 50%;
+        background: #0d6efd; color: white;
+        display: flex; justify-content: center; align-items: center;
+        margin: auto; font-size: 22px; font-weight: 700;
+    }
+    .step-label { margin-top: 10px; font-weight: 600; }
+
+    /* Form Box */
+    .register-box {
+        border: 3px solid #004d80; border-radius: 10px;
+        padding: 25px; background: #fff; position: relative;
+    }
+    .register-title {
+        background: #004d80; color: #fff; padding: 4px 12px;
+        border-radius: 4px; position: absolute; right: 20px; top: -12px;
+    }
+
+    .btn-orange {
+        width: 100%; padding: 12px; font-size: 17px;
+        font-weight: bold; background: #ff6a00; color: white; border: none;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="top-header text-center">
+    <img src="https://i.imgur.com/n5VbRkI.png" height="50">
+    <div class="site-title">Home Tutor Site</div>
+    <div class="sub-title">We Help Students and Tutors Find Each Other</div>
+</div>
+
+<!-- MAIN PAGE -->
+<div class="container mt-5">
+
+    <div class="row justify-content-between">
+
+        <!-- LEFT CONTENT -->
+        <div class="col-md-6">
+
+            <h3 id="leftTitle" class="text-center mb-4">
+                Find Best Home Tutors / Online Tutors
+            </h3>
+
+            <div class="row mb-4" id="leftSteps">
+                <div class="col step-box">
+                    <div class="step-label">Tell Us Your<br>NEEDS</div>
+                    <div class="step-num">1</div>
+                </div>
+                <div class="col step-box">
+                    <div class="step-label">Get Free<br>DEMO</div>
+                    <div class="step-num">2</div>
+                </div>
+                <div class="col step-box">
+                    <div class="step-label">Confirm If You<br>LIKE</div>
+                    <div class="step-num">3</div>
+                </div>
+            </div>
+
+            <p id="leftNote" class="text-center text-success fw-bold">
+                Home Tuition is the #1 secret of ACADEMIC EXCELLENCE
+            </p>
+
+            <div class="text-center">
+                <img src="https://i.ibb.co/VjxS9km/tutor-kid.png" width="75%">
+            </div>
+
+        </div>
+
+        <!-- RIGHT FORM -->
+        <div class="col-md-5">
+
+            <span class="register-title">FREE Registration</span>
+
+            <div class="register-box">
+
+                <!-- RADIO -->
+                <label class="fw-bold mb-2">I am a</label>
+                <div class="d-flex mb-3 gap-4">
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="userType" id="studentRadio" checked>
+                        <label class="form-check-label" for="studentRadio">Student / Parent</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="userType" id="tutorRadio">
+                        <label class="form-check-label" for="tutorRadio">Tutor</label>
+                    </div>
+                </div>
+
+                <!-- FORM -->
+                <input id="name" type="text" class="form-control mb-3" placeholder="Name">
+
+                <input id="mobile" type="text" class="form-control mb-3" placeholder="Mobile Number">
+
+                <input id="email" type="email" class="form-control mb-3" placeholder="Email">
+
+                <input id="course" type="text" class="form-control mb-3"
+                       placeholder="Course you need help with">
+
+                <input id="subject" type="text" class="form-control mb-4"
+                       placeholder="Subjects you need help with">
+
+                <button id="submitBtn" class="btn-orange">GET FREE DEMO CLASS</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- SweetAlert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const studentRadio = document.getElementById("studentRadio");
+    const tutorRadio = document.getElementById("tutorRadio");
+
+    const leftTitle = document.getElementById("leftTitle");
+    const leftNote = document.getElementById("leftNote");
+    const leftSteps = document.getElementById("leftSteps");
+
+    const courseInput = document.getElementById("course");
+    const subjectInput = document.getElementById("subject");
+    const submitBtn = document.getElementById("submitBtn");
+
+    function updateUI() {
+        if (tutorRadio.checked) {
+
+            leftTitle.innerText = "Find Home Tuition / Online Tuition Part Time Jobs";
+            leftNote.innerText = "You focus on teaching, we focus on finding students for you.";
+
+            leftSteps.innerHTML = `
+                <div class="col step-box">
+                    <div class="step-label">Create<br>PROFILE</div>
+                    <div class="step-num">1</div>
+                </div>
+                <div class="col step-box">
+                    <div class="step-label">Get<br>STUDENTS</div>
+                    <div class="step-num">2</div>
+                </div>
+                <div class="col step-box">
+                    <div class="step-label">Start<br>EARNING</div>
+                    <div class="step-num">3</div>
+                </div>
+            `;
+
+            courseInput.placeholder = "Courses you teach";
+            subjectInput.placeholder = "Subjects you teach";
+
+            submitBtn.innerText = "FIND STUDENTS NOW!";
+
+        } else {
+
+            leftTitle.innerText = "Find Best Home Tutors / Online Tutors";
+            leftNote.innerText = "Home Tuition is the #1 secret of ACADEMIC EXCELLENCE";
+
+            leftSteps.innerHTML = `
+                <div class="col step-box">
+                    <div class="step-label">Tell Us Your<br>NEEDS</div>
+                    <div class="step-num">1</div>
+                </div>
+                <div class="col step-box">
+                    <div class="step-label">Get Free<br>DEMO</div>
+                    <div class="step-num">2</div>
+                </div>
+                <div class="col step-box">
+                    <div class="step-label">Confirm If You<br>LIKE</div>
+                    <div class="step-num">3</div>
+                </div>
+            `;
+
+            courseInput.placeholder = "Course you need help with";
+            subjectInput.placeholder = "Subjects you need help with";
+
+            submitBtn.innerText = "GET FREE DEMO CLASS";
+        }
+    }
+
+    studentRadio.addEventListener("change", updateUI);
+    tutorRadio.addEventListener("change", updateUI);
+
+    updateUI();
+
+
+    // ============================
+    // SUBMIT FORM → API WITH TYPE
+    // ============================
+    submitBtn.addEventListener("click", async () => {
+
+        const name = document.getElementById("name").value.trim();
+        const mobile = document.getElementById("mobile").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const course = courseInput.value.trim();
+        const subject = subjectInput.value.trim();
+
+        // VALIDATION
+        if (!name || !mobile || !email || !course || !subject) {
+            return Swal.fire("Missing Fields", "Please fill all fields.", "warning");
+        }
+
+        if (mobile.length !== 10) {
+            return Swal.fire("Invalid Number", "Mobile number must be 10 digits.", "error");
+        }
+
+        // API Selection
+        const isTutor = tutorRadio.checked;
+        const url = isTutor
+            ? "https://sanjayer19.pythonanywhere.com/tutor"
+            : "https://sanjayer19.pythonanywhere.com/student";
+
+        // SEND TYPE INSIDE PAYLOAD
+        const payload = {
+            type: isTutor ? "tutor" : "student",
+            name,
+            mobile_no: mobile,
+            email,
+            course,
+            subject
+        };
+
+        // SEND FETCH REQUEST
+        try {
+            const response = await fetch(url, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload)
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                Swal.fire({
+                    icon: "success",
+                    title: "Success!",
+                    text: data.message,
+                    timer: 2000
+                });
+
+                // Optional: Clear form
+                document.querySelectorAll("input").forEach(i => i.value = "");
+
+            } else {
+                Swal.fire("Error", data.error, "error");
+            }
+
+        } catch (error) {
+            Swal.fire("Server Error", "Please try again later.", "error");
+        }
+
+    });
+
+});
+</script>
+
+
+</body>
+</html>
